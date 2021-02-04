@@ -1,13 +1,13 @@
 ## Automate augmentation and processing of hand-written tabular data using Amazon Textract and Amazon A2I
 
-This sample is based on the blog post (Link to be specified). It shows how you can use Amazon Textract Handwritten feature to extract tabular data from invoices and then have a human review loop using Amazon Augmented AI to make sure the predictions are highly accurate. Also it shows how to store the results into Amazon Dynamodb for making it available for downstream processing.
+This sample is based on the blog post (Link to be specified). It shows how you can use Amazon Textract Handwritten feature to extract tabular data from documents and then have a human review loop using (Amazon Augmented AI)[https://aws.amazon.com/augmented-ai/] to make sure the predictions are highly accurate. Also it shows how to store the results into Amazon Dynamodb for making it available for downstream processing.
 
 We walk you through the following steps using this Amazon SageMaker Jupyter notebook (Link to be updated):
 
 1. Prerequisite step
-2. Use Amazon Textract to retrieve tabular data from document  and Inspect and analyze line items from Amazon Textract response.
-3. Set up  Amazon A2I human loop to review low confidence Amazon Textract response.
-4. Store the augmented forms in Amazon Dynamodb for downstream processing
+2. Use Amazon Textract to retrieve tabular data from document, inspect and analyze line items from Amazon Textract response.
+3. Set up  Amazon A2I human loop to review and change the entries from the Amazon Textract response.
+4. Store the contents of the tabular data including changes in Amazon Dynamodb for downstream processing
 
 
 
@@ -22,7 +22,7 @@ This solution uses AI services, and SageMaker.
 
 * README.md - this file
 
-* textract-hand-written-a2i.ipynb - Jupyter Notebook containing details of how to use Amazon Textract to extract the content of your documents containing hand-written tabular data, setup and send to a human review loop, and augment the extracted invoice content for downstream processing.
+* Amazon A2I with Amazon Textract Handwritten Tables.ipynb - Jupyter Notebook containing details of how to use Amazon Textract to extract the content of your documents containing hand-written tabular data, setup and send to a human review loop, and augment the extracted invoice content for downstream processing.
 
 * cfntextracta2i.yaml - this file contains the infrastrcutre code used by AWS CloudFormation to deploy notebook in your aws account.
 
