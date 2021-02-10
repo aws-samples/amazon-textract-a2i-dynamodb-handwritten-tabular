@@ -1,0 +1,137 @@
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<style>
+  table, tr, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+</style>
+
+<crowd-form>
+    <div>
+        <h1>Instructions</h1>
+        <p>Please review the header and line items, and make corrections where appropriate. </p>
+        <p> You can modify both the header and line items </p>
+    </div>
+   <div>
+      <h3>Original Form</h3>
+      <classification-target>
+        <img style="width: 100%; max-height: 40%; margin-bottom: 10px" src="{{ task.input.image1 | grant_read_access }}"/>        
+      </classification-target>     
+   </div>
+    <br>
+    <h1> Enter your corrections below </h1>
+    <table>
+    <tr>
+        <th>HEADER LINE</th>
+        <th>ORIGINAL FORM HEADER</th>
+        <th>CHANGE REQUIRED</th>
+        <th>CORRECTED FORM HEADER</th>
+        <th>COMMENTS</th>
+    </tr>
+    {% for pair in task.input.Header %}
+
+        <tr>
+          <td>{{ pair.hdrrow }}</td>
+          <td><crowd-text-area name="predictedhdr{{ forloop.index }}" value="{{ pair.orighdr }}"></crowd-text-area></td>     
+          <td>
+            <p>
+              <input type="radio" id="agree{{ forloop.index }}" name="rating{{ forloop.index }}" value="agree" required>
+              <label for="agree{{ forloop.index }}">Correct</label>
+            </p>
+            <p>
+              <input type="radio" id="disagree{{ forloop.index }}" name="rating{{ forloop.index }}" value="disagree" required>
+              <label for="disagree{{ forloop.index }}">Incorrect</label>
+            </p>
+          </td>
+          <td>
+            <p>
+            <input type="text" name="TrueHdr{{ forloop.index }}" placeholder="Corrected Header Info" />
+            </p>
+           </td>
+           <td>
+            <p>
+            <input type="text" name="Comments{{ forloop.index }}" placeholder="Explain why you changed the value" />
+            </p>
+           </td>
+        </tr>
+
+      {% endfor %}
+    </table>
+    <br>
+    <br>
+    <table>
+      <tr>
+        <th>LINE ITEM</th>
+        <th>START DATE</th>
+        <th>END DATE</th>
+        <th>EMPLOYER NAME</th>
+        <th>POSITION HELD</th>
+        <th>REASON FOR LEAVING</th>
+        <th>CHANGE REQUIRED</th>
+        <th>TRUE START DATE</th>
+        <th>TRUE END DATE</th>
+        <th>TRUE EMPLOYER NAME</th>
+        <th>TRUE POSITION HELD</th>
+        <th>TRUE REASON FOR LEAVING</th>
+        <th>COMMENTS</th>
+      </tr>
+
+      {% for pair in task.input.Pairs %}
+
+        <tr>
+          <td>{{ pair.row }}</td>
+          <td><crowd-text-area name="predicted{{ forloop.index }}" value="{{ pair.startdate }}"></crowd-text-area></td>
+          <td><crowd-text-area name="predicted{{ forloop.index }}" value="{{ pair.enddate }}"></crowd-text-area></td>
+          <td><crowd-text-area name="predicted{{ forloop.index }}" value="{{ pair.empname }}"></crowd-text-area></td>
+          <td><crowd-text-area name="predicted{{ forloop.index }}" value="{{ pair.posheld }}"></crowd-text-area></td>
+          <td><crowd-text-area name="predicted{{ forloop.index }}" value="{{ pair.resleave }}"></crowd-text-area></td>
+          <td>
+            <p>
+              <input type="radio" id="agree{{ forloop.index }}" name="rating{{ forloop.index }}" value="agree" required>
+              <label for="agree{{ forloop.index }}">Correct</label>
+            </p>
+            <p>
+              <input type="radio" id="disagree{{ forloop.index }}" name="rating{{ forloop.index }}" value="disagree" required>
+              <label for="disagree{{ forloop.index }}">Incorrect</label>
+            </p>
+          </td>
+          <td>
+            <p>
+            <input type="text" name="TrueStartDate{{ forloop.index }}" placeholder="Corrected Start Date" />
+            </p>
+           </td>
+           <td>
+            <p>
+            <input type="text" name="TrueEndDate{{ forloop.index }}" placeholder="Corrected End Date" />
+            </p>
+           </td>
+          <td>
+            <p>
+            <input type="text" name="TrueEmpName{{ forloop.index }}" placeholder="Corrected Employee Name" />
+            </p>
+           </td>
+           <td>
+            <p>
+            <input type="text" name="TruePosHeld{{ forloop.index }}" placeholder="Corrected Position Held" />
+            </p>
+           </td>
+           <td>
+            <p>
+            <input type="text" name="TrueResLeave{{ forloop.index }}" placeholder="Corrected Reason for Leaving" />
+            </p>
+           </td>
+           <td>
+            <p>
+            <input type="text" name="Change Reason{{ forloop.index }}" placeholder="Explain why you changed the value" />
+            </p>
+           </td>
+        </tr>
+
+      {% endfor %}
+
+    </table>
+</crowd-form>
+
+
