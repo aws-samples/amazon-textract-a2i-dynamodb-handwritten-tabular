@@ -1,4 +1,4 @@
-## Automate augmentation and processing of hand-written tabular data using Amazon Textract and Amazon A2I
+## Processing forms containing hand-written tabular data using Amazon Textract and Amazon A2I
 
 This sample is based on the blog post (Link to be specified). It shows how you can use [Amazon Textract](https://aws.amazon.com/blogs/machine-learning/amazon-textract-recognizes-handwriting-and-adds-five-new-languages/) Handwritten feature to extract tabular data from documents and then have a human review loop using [Amazon Augmented AI](https://aws.amazon.com/augmented-ai/) to make sure the predictions are highly accurate. Also it shows how to store the results into Amazon Dynamodb for making it available for downstream processing.
 
