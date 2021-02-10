@@ -70,10 +70,10 @@ On this page you will see a list of any SageMaker notebooks you have running, si
 
 ![CFNStack6](images/cfn-stack-06.png)
 
-This will open the Jupyter environment, think of it as a web based data science IDE if you are not familiar with it. You should see `textract-hand-written-a2i.ipynb` notebook.
+This will open the Jupyter environment, think of it as a web based data science IDE if you are not familiar with it. You should see `textract-hand-written-a2i-forms.ipynb` notebook.
 
-## Automate Augmentation using Notebook.
-Open `textract-hand-written-a2i.ipynb` and follow along there.
+## Jupyter Notebook
+Open `textract-hand-written-a2i-forms.ipynb` and follow along there.
 
 
 ## Security
