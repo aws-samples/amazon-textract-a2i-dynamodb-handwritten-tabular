@@ -36,7 +36,7 @@ This CloudFormation template will complete the following:
 2. Create a SageMaker Notebook instance
 3. Clone this repo codebase onto the Notebook instance.
 
-[![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?stackName=TextractA2I&templateURL=https://ai-ml-services-lab.s3.amazonaws.com/public/labs/textract/cfntextracta2i.yaml)
+[![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?stackName=TextractA2I&templateURL=https://aws-ml-blog.s3.amazonaws.com/artifacts/process-documents-containing-handwritten-tabular-content/cfntextracta2i.yaml)
 
 Follow along with the screenshots below if you to deplpy the stack.
 
